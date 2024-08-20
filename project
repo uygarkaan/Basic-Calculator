@@ -1,0 +1,51 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Random random = new Random();
+        //Create a scanner
+        Scanner scanner = new Scanner(System.in);
+
+        //Get two number and two actions from the user
+        System.out.println("Enter the first number");
+        double num1 = scanner.nextDouble();
+        System.out.println("Enter the second number");
+        double num2 = scanner.nextDouble();
+        System.out.println("Select the operation you want to perform (addition, subtraction, multiplication, division)");
+        String operation = scanner.next();
+
+        double result = 0;
+
+        //Calculate based on selected transaction
+        switch (operation) {
+            case "addition":
+                result = num1 + num2;
+                break;
+            case "subtraction":
+                result = num1 - num2;
+                break;
+            case "multiplication":
+                result = num1 * num2;
+                break;
+            case "division":
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Division by zero");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Invalid operation");
+                return;
+
+        }
+
+        //Print the result to the screen
+        System.out.println("The result is: " + result);
+
+        //Close the scanner object
+        scanner.close();
+    }
+}
