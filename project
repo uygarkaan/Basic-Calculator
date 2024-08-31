@@ -1,51 +1,70 @@
-import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class lesson17 {
     public static void main(String[] args) {
-        Random random = new Random();
-        //Create a scanner
+
+         /**
+         * This GPA calculator was created by @uygarkaan.
+         * You can find more projects and tutorials at https://github.com/uygarkaan
+         */
+
+        int a, b;
+        String select;
         Scanner scanner = new Scanner(System.in);
 
-        //Get two number and two actions from the user
-        System.out.println("Enter the first number");
-        double num1 = scanner.nextDouble();
-        System.out.println("Enter the second number");
-        double num2 = scanner.nextDouble();
-        System.out.println("Select the operation you want to perform (addition, subtraction, multiplication, division)");
-        String operation = scanner.next();
+        System.out.println("Enter the first number: ");
+        a = scanner.nextInt();
 
-        double result = 0;
+        System.out.println("Enter the second number: ");
+        b = scanner.nextInt();
 
-        //Calculate based on selected transaction
-        switch (operation) {
+        System.out.println("1-Addition\n2-Subtraction\n3-Multiplication\n4-Division");
+        System.out.println("Select the action you want to take: ");
+        select = scanner.next().toLowerCase(); // Kullanıcı girişini küçük harfe dönüştür
+
+        switch (select) {
+            case "1":
             case "addition":
-                result = num1 + num2;
+            case "+":
+            case "toplama":
+            case "topla":
+                System.out.println("Result: " + (a + b));
                 break;
+
+            case "2":
+            case "-":
             case "subtraction":
-                result = num1 - num2;
+            case "çıkarma":
+            case "çıkar":
+                System.out.println("Result: " + (a - b));
                 break;
+
+            case "3":
+            case "*":
             case "multiplication":
-                result = num1 * num2;
+            case "çarpma":
+            case "çarp":
+                System.out.println("Result: " + (a * b));
                 break;
+
+            case "4":
+            case "/":
             case "division":
-                if (num2 != 0) {
-                    result = num1 / num2;
+            case "bölme":
+            case "böl":
+                if (b != 0) {
+                    System.out.println("Result: " + (a / b));
                 } else {
-                    System.out.println("Division by zero");
-                    return;
+                    System.out.println("Error! Division by zero is not allowed.");
                 }
                 break;
-            default:
-                System.out.println("Invalid operation");
-                return;
 
+            default:
+                System.out.println("Invalid operation! Please choose a valid option.");
+                break;
         }
 
-        //Print the result to the screen
-        System.out.println("The result is: " + result);
-
-        //Close the scanner object
+        System.out.println("Thank you for using our program.");
         scanner.close();
     }
 }
