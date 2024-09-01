@@ -1,6 +1,5 @@
 ## Basic Calculator
-
-This project is a simple calculator application that allows the user to input two numbers and select one of four basic arithmetic operations. The user can choose addition, subtraction, multiplication, or division, and the result is displayed on the screen.
+A basic calculator program that performs addition, subtraction, multiplication, and division based on user input, supporting multiple languages.
 
 ## Features
 
